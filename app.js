@@ -110,7 +110,8 @@ window.addEventListener('scroll', () => {
 
   function go(n) {
     idx = (n + total) % total;
-    track.style.transform = `translateX(-${idx * 100}%)`;
+    const w = track.parentElement.offsetWidth;
+    track.style.transform = `translateX(-${idx * w}px)`;
     dots.forEach((d, i) => d.classList.toggle('active', i === idx));
   }
 

@@ -600,11 +600,12 @@ img { display: block; max-width: 100%; object-fit: cover; }
 @media (max-width: 900px) {
   :root { --pad: 5vw; }
 
-  /* Navbar: full width, no centering offset */
+  /* Navbar: full width, solid background */
   .navbar {
     left: 0; right: 0; transform: none;
     max-width: 100%; width: 100%;
     height: 64px; gap: 10px; padding: 0 5vw;
+    background: #080808;
   }
   .nav-spacer { height: 64px; }
 
@@ -623,11 +624,13 @@ img { display: block; max-width: 100%; object-fit: cover; }
     border-bottom: 1px solid var(--border);
   }
 
-  /* Carousel: full width */
-  .carousel-section { margin: 0; padding: 12px 0 0; }
-  .carousel { height: 220px; border-radius: 0; }
+  /* Carousel: full width, кнопка не перекрывает точки */
+  .carousel-section { margin: 0; padding: 0; }
+  .carousel { height: 260px; border-radius: 0; }
+  .carousel-caption h2 { font-size: 22px; margin-bottom: 12px; }
+  .carousel-overlay { padding-bottom: 50px; }
 
-  /* Menu */
+  /* Menu: 2 колонки */
   .menu-grid { grid-template-columns: repeat(2, 1fr); }
   .menu-card-img { height: 150px; }
   .menu-section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
@@ -640,18 +643,16 @@ img { display: block; max-width: 100%; object-fit: cover; }
   .footer-bottom { padding: 18px 5vw; }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   :root { --pad: 4vw; }
 
-  .menu-grid { grid-template-columns: 1fr; }
-  .carousel { height: 180px; }
+  .carousel { height: 220px; }
+  .carousel-caption h2 { font-size: 18px; }
+  .btn-primary { font-size: 12px; padding: 9px 18px; }
 
   .reservation-left h2,
-  .menu-section-header h2 { font-size: 26px; }
+  .menu-section-header h2 { font-size: 24px; }
 
-  .carousel-caption h2 { font-size: 22px; }
-  .btn-primary { font-size: 13px; padding: 10px 20px; }
-
-  .filter-tabs { gap: 6px; }
-  .tab { font-size: 12px; padding: 6px 14px; }
+  .filter-tabs { gap: 6px; flex-wrap: wrap; }
+  .tab { font-size: 11px; padding: 5px 12px; }
 }
