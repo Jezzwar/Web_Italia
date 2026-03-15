@@ -677,7 +677,7 @@ img { display: block; max-width: 100%; object-fit: cover; }
   .menu-card-body p { font-size: 12px; margin-bottom: 10px; -webkit-line-clamp: 2; line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; flex: unset; }
   .menu-card-footer { flex-direction: row; align-items: center; gap: 10px; flex-wrap: wrap; }
   .menu-price { font-size: 16px; }
-  .btn-add-cart { padding: 7px 14px; font-size: 11px; }
+  .btn-add-cart { padding: 7px 22px; font-size: 11px; }
 
   /* Reservation */
   .form-row { grid-template-columns: 1fr; }
