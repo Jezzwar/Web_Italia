@@ -107,17 +107,19 @@ window.addEventListener('scroll', () => {
   const track = document.getElementById('carouselTrack');
   const dots = document.querySelectorAll('.cdot');
   if (!track) return;
-  const total = track.children.length;
+  const slides = Array.from(track.children);
+  const total = slides.length;
   let idx = 0, timer;
 
   function go(n) {
     idx = (n + total) % total;
-    const w = track.parentElement.offsetWidth;
+    const w = slides[0].getBoundingClientRect().width;
     track.style.transform = `translateX(-${idx * w}px)`;
     dots.forEach((d, i) => d.classList.toggle('active', i === idx));
   }
 
   dots.forEach(d => d.addEventListener('click', () => { go(+d.dataset.idx); reset(); }));
+  window.addEventListener('resize', () => go(idx));
 
   function reset() { clearInterval(timer); timer = setInterval(() => go(idx + 1), 4500); }
   reset();
